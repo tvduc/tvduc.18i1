@@ -4,28 +4,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bai2
+namespace sv
 {
-    class Program
+    class grogram
     {
         static void Main(string[] args)
-        {
-            int n;
-            Console.WriteLine("nhap so doan tau:");
-            n = Int32.Parse(Console.ReadLine());
-            doantau[] mangdt = new doantau[100];
-            for (int i = 0; i < n; i++)
+        
             {
-                mangdt[i] = new doantau();
-                mangdt[i].nhap();
-                mangdt[i].intt();
+                string masv;
+                float toan;
+                float ly;
+                float hoa;
+                //default constructor
+                public sinhvien()
+                {
+                    this.masv = "01";
+                    this.toan = (float)7.5;
+                    this.ly = (float)8.5;
+                    this.hoa = (float)6.0;
+                }
+                //tham so hoa constructor
+                public sinhvien(string masv, float toan, float ly, float hoa)
+                {
+                    this.masv = masv;
+                    this.toan = toan;
+                    this.ly = ly;
+                    this.hoa = hoa;
 
-            }
-            doantau tau1 = new doantau();
-            tau1.nhap();
-            tau1.intt();
-            Console.ReadLine();
-        }
+                }
+                public void nhap()
+                {
+                    Console.WriteLine("Nhap ma sinh vien:");
+                    this.masv = Console.ReadLine();
+                    Console.WriteLine("nhap diem toan");
+                    this.toan = float.Parse(Console.ReadLine());
+                    Console.WriteLine("nhap diem ly:");
+                    this.ly = float.Parse(Console.ReadLine());
+                    Console.WriteLine("nhap diem hoa:");
+                    this.hoa = float.Parse(Console.ReadLine());
+
+
+                }
+                public double tinhTB()
+                {
+                    double tb = (this.toan + this.ly + this.hoa) / 3;
+                    return tb;
+                }
+                public void intt()
+                {
+                    Console.WriteLine("sinh vien ma {0} co diem trung binh la {1}", this.masv, this.tinhTB());
+                }
+            
     }
-    
+    }
 }
